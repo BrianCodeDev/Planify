@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+.container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1140px; 
+  }
+  
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1320px;
+    }
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    box-shadow: 2px 2px 16px rgb(183, 183, 183);
+  }
+  .navbar .navbar-center input {
+    width: 600px;
+    margin-left: 20%;
+  }
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: rgb(72, 72, 72);
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .profile-dropdown {
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .profile-dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #555;
+  }
+  
+  .navbar-center .search-bar {
+    width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 30px;
+    height: auto;
+  }
+  
+  .brand-name {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

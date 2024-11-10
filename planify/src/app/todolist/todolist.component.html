@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClickUp-like Navbar with Search</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-right">
+            <div class="logo">
+              <img src="assets/images/planify.png" alt="Logo" class="logo-img">
+              <span class="brand-name">BrandName</span>
+            </div>
+          </div>
+        <div class="navbar-center">
+          <input type="text" class="search-bar" placeholder="Search...">
+        </div>
+        <div class="navbar-left">
+            <div class="nav-links">
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Contact</a>
+            </div>
+            <div class="profile-dropdown">
+              <img src="profile-pic.jpg" alt="Profile" class="profile-pic">
+              <div class="dropdown-content">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+                <a href="#">Log out</a>
+              </div>
+            </div>
+          </div>
+      </nav>
+<div class="container">
+
+    <h1>Planify</h1>
+
+    <hr>
+    <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+        <div class="form-group">
+            <label for="task">Task</label>
+            <input type="text" class="form-control" id="task" placeholder="Enter task" ngModel name="task" required>
+            <small *ngIf="taskForm.invalid && taskForm.dirty" id="errorMessage" class="form-text text-danger">Required
+                field</small>
+        </div>
+
+        <button [disabled]="taskForm.invalid" id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <hr>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Completed</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of taskArray; index as i">
+                <td>{{t.taskName}}</td>
+                <td><input (change)="onCheck(i)" id="myCheckbox" type="checkbox"></td>
+                <td><button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
